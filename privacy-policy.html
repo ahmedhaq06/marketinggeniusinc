@@ -8,52 +8,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --green: #18a349; --green-dark: #128a3a; --bg: #0a0a0a; --surface: #111111;
-      --border: #2a2a2a; --border-light: #333333; --text: #f0f0f0; --text-muted: #8a9099;
-      --text-dim: #555; --font-main: 'Inter',sans-serif; --font-display: 'Barlow Condensed',sans-serif;
-      --max-w: 800px;
-    }
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: var(--font-main); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-    a { color: var(--green); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    #nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10,10,10,.96); backdrop-filter: blur(12px); padding: 16px 0; border-bottom: 1px solid var(--border); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1180px; margin: 0 auto; padding: 0 32px; }
-    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .nav-logo img { height: 34px; width: auto; display: block; object-fit: contain; }
-    .nav-logo-text { font-size: 16px; font-weight: 800; letter-spacing: -.01em; color: var(--text); white-space: nowrap; }
-    .nav-back { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); display: flex; align-items: center; gap: 8px; transition: color .2s; }
-    .nav-back:hover { color: var(--green); text-decoration: none; }
-
-    .page-wrap { max-width: var(--max-w); margin: 0 auto; padding: 140px 32px 100px; }
-    .page-header { margin-bottom: 56px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
-    .page-label { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
-    .page-title { font-family: var(--font-display); font-size: clamp(36px,5vw,56px); font-weight: 800; text-transform: uppercase; line-height: 1.1; color: var(--text); margin-bottom: 20px; }
-    .page-date { font-size: 13px; color: var(--text-dim); }
-
-    .prose h2 { font-family: var(--font-display); font-size: 24px; font-weight: 800; text-transform: uppercase; letter-spacing: .02em; color: var(--text); margin: 48px 0 16px; padding-top: 48px; border-top: 1px solid var(--border); }
-    .prose h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
-    .prose p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; }
-    .prose ul { list-style: none; margin-bottom: 16px; }
-    .prose ul li { font-size: 15px; color: var(--text-muted); line-height: 1.8; padding: 6px 0 6px 20px; position: relative; }
-    .prose ul li::before { content: ''; position: absolute; left: 0; top: 15px; width: 6px; height: 6px; background: var(--green); }
-    .prose strong { color: var(--text); font-weight: 600; }
-    .prose a { color: var(--green); }
-
-    #footer { background: var(--surface); border-top: 1px solid var(--border); padding: 40px 0; margin-top: 80px; }
-    .footer-bottom { display: flex; align-items: center; justify-content: space-between; max-width: 1180px; margin: 0 auto; padding: 0 32px; gap: 20px; flex-wrap: wrap; }
-    .footer-copy { font-size: 12px; color: var(--text-dim); }
-    .footer-legal { display: flex; gap: 24px; }
-    .footer-legal a { font-size: 12px; color: var(--text-dim); transition: color .2s; }
-    .footer-legal a:hover { color: var(--text-muted); }
-  </style>
-</head>
-<body>
-<nav id="nav">
+    <link rel="icon" type="image/jpeg" href="logo.jpeg" />
+  <link rel="canonical" href="https://marketinggeniusinc.com/privacy-policy.html" />
+  <link rel="stylesheet" href="css/style.css" />
+</head><body>
+<nav id="nav" class="legal-nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo" aria-label="Marketing Genius INC Home">
       <img src="logo.jpeg" alt="Marketing Genius INC" />
