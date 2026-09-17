@@ -106,7 +106,9 @@
         0 20px 56px rgba(0,0,0,0.65),
         0 0 0 1px rgba(24,163,73,0.12);
     }
-    .nav-logo img { height: 40px; width: auto; display: block; }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo img { height: 34px; width: auto; display: block; object-fit: contain; }
+    .nav-logo-text { font-size: 16px; font-weight: 800; letter-spacing: -.01em; color: var(--text); white-space: nowrap; }
     .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
     .nav-links a { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); transition: color .2s; }
     .nav-links a:hover { color: var(--text); }
@@ -314,7 +316,9 @@
     /* FOOTER */
     #footer { background: var(--surface); border-top: 1px solid var(--border); padding: 64px 0 40px; }
     .footer-top { display: grid; grid-template-columns: 280px 1fr 1fr 1fr; gap: 56px; padding-bottom: 48px; border-bottom: 1px solid var(--border); }
-    .footer-brand img { height: 40px; width: auto; margin-bottom: 20px; display: block; }
+    .footer-logo { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; margin-bottom: 20px; }
+    .footer-logo img { height: 36px; width: auto; display: block; object-fit: contain; }
+    .footer-logo-text { font-size: 18px; font-weight: 800; letter-spacing: -.01em; color: var(--text); white-space: nowrap; }
     .footer-brand p { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
     .footer-socials { display: flex; gap: 12px; margin-top: 24px; }
     .footer-social-link { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); color: var(--text-muted); transition: border-color .2s,color .2s; }
@@ -327,6 +331,8 @@
     .footer-contact-item { display: flex; flex-direction: column; gap: 3px; margin-bottom: 16px; }
     .footer-contact-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-dim); }
     .footer-contact-value { font-size: 14px; color: var(--text-muted); }
+    .footer-contact-value a { color: var(--text-muted); text-decoration: none; transition: color .2s; }
+    .footer-contact-value a:hover { color: var(--green-light); }
     .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 32px; gap: 20px; flex-wrap: wrap; }
     .footer-copy { font-size: 12px; color: var(--text-dim); }
     .footer-legal { display: flex; gap: 24px; }
@@ -556,13 +562,14 @@
 <nav id="nav" aria-label="Main navigation">
   <div class="nav-pill">
     <a href="#hero" class="nav-logo" id="nav-logo-link" aria-label="Marketing Genius INC">
-      <img src="Logo.jpeg" alt="Marketing Genius INC" />
+      <img src="logo.jpeg" alt="Marketing Genius INC" />
+      <span class="nav-logo-text">Marketing Genius INC</span>
     </a>
     <ul class="nav-links">
       <li><a href="#how" id="nav-how">Como Funciona</a></li>
-      <li><a href="#founder" id="nav-founder">El Fundador</a></li>
-      <li><a href="#results" id="nav-results">Resultados</a></li>
       <li><a href="#fit" id="nav-fit">Es Para Ti?</a></li>
+      <li><a href="#results" id="nav-results">Resultados</a></li>
+      <li><a href="#founder" id="nav-founder">El Fundador</a></li>
       <li><a href="#faq" id="nav-faq">Preguntas</a></li>
     </ul>
     <div style="display:flex;align-items:center;gap:10px">
@@ -582,9 +589,9 @@
     </svg>
   </button>
   <a href="#how" id="mobile-nav-how">Como Funciona</a>
-  <a href="#founder" id="mobile-nav-founder">El Fundador</a>
-  <a href="#results" id="mobile-nav-results">Resultados</a>
   <a href="#fit" id="mobile-nav-fit">Es Para Ti?</a>
+  <a href="#results" id="mobile-nav-results">Resultados</a>
+  <a href="#founder" id="mobile-nav-founder">El Fundador</a>
   <a href="#faq" id="mobile-nav-faq">Preguntas</a>
   <a href="https://cal.com/leonardo-munoz-os2dve/30min" target="_blank" rel="noopener noreferrer" class="btn-primary" id="mobile-nav-cta">Agenda una Llamada</a>
 </div>
@@ -704,28 +711,42 @@
   </div>
 </section>
 
-<section id="founder">
+<section id="fit">
   <div class="container">
-    <div class="founder-story-grid">
-      <div data-aos="fade-right" data-aos-duration="700" style="position:relative">
-        <img src="Leo.jpeg" alt="Leonardo Munoz, Fundador de Marketing Genius INC" class="founder-photo" />
-        <div class="founder-img-tag">
-          <div class="founder-img-tag-name">Leonardo Munoz</div>
-          <div class="founder-img-tag-title">Fundador, Marketing Genius INC / Colombia</div>
+    <div class="fit-header" data-aos="fade-up" data-aos-duration="600">
+      <span class="section-label">Habla Claro</span>
+      <h2>Esto No Es Para Todo El Mundo</h2>
+      <div class="divider centered"></div>
+      <p>Trabajo con un numero limitado de clientes a la vez. Antes de agendar una llamada, se honesto sobre donde estas. Si no eres un buen fit, te lo digo en la llamada. Sin drama..</p>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-col good" data-aos="fade-right" data-aos-duration="600">
+        <div class="fit-col-header">
+          <div class="fit-col-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="fit-col-title">Esto Es Para Ti Si...</div>
         </div>
+        <ul class="fit-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Tu empresa genera entre $1M y $3M al ano y quieres crecer sin agregar mas caos</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Tienes un equipo que puede manejar mas trabajo. Solo necesitas los proyectos para mantenerlos ocupados</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Estas cansado de competir por precio con contratistas que hacen la mitad de la calidad que tu</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Entiendes que el marketing es una inversion, no un gasto. Puedes comprometerte con un minimo de 90 dias</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Respondes a clientes potenciales rapidamente y tienes un proceso de ventas</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Tu proyecto minimo es de $8,000 o mas</li>
+        </ul>
       </div>
-      <div class="founder-story-content" data-aos="fade-left" data-aos-duration="700">
-        <span class="section-label">De Fundador a Fundador</span>
-        <h2>Conozco tu Negocio Porque Creci en Uno</h2>
-        <div class="divider"></div>
-        <div class="founder-story-body">
-          <p class="lead">Crecí rodeado de construcción. Vi de cerca como funcionan los negocios de contratistas latinos: financiados con familia, construidos con reputacion, y mantenidos vivos por el boca a boca.</p>
-          <p>También vi el techo. El momento en que ya no puedes crecer mas porque tu negocio depende de cuantas personas te recomienden ese mes. Eso no es un negocio sostenible. <strong>Es una apuesta.</strong></p>
-          <p>Me ensene a mi mismo publicidad pagada desde cero: probando, perdiendo dinero, aprendiendo, y reconstruyendo hasta entender que es lo que realmente mueve la aguja para empresas de servicios. No teoria. No cursos. Lo que funciona en el mundo real, con presupuestos reales, en mercados competitivos de verdad.</p>
-          <p class="callout">"Yo soy colombiano. Conozco la desconfianza que sientes cuando alguien que no entiende tu cultura, tu forma de trabajar, o la realidad de tu flujo de caja te quiere vender algo. Por eso hablo directo."</p>
-          <p>Funde Marketing Genius INC con un solo enfoque: <strong>empresas de hardscaping, pavimentacion y concreto entre $1M y $3M</strong>, operadores que ya demostraron que pueden entregar trabajo de calidad pero no han logrado crear demanda constante para ese trabajo. Ese es el espacio que yo cierro.</p>
-          <p>No trabajo con cualquier empresa. No prometo resultados de la noche a la manana. Pero si trabajas conmigo, sabes que la persona al otro lado del telefono entiende de donde vienes. Porque yo tambien vengo de ahi.</p>
+      <div class="fit-col bad" data-aos="fade-left" data-aos-duration="600">
+        <div class="fit-col-header">
+          <div class="fit-col-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+          <div class="fit-col-title">Esto No Es Para Ti Si...</div>
         </div>
+        <ul class="fit-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Estas por debajo de $500K y aun no tienes la capacidad de equipo para tomar mas trabajos</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Quieres resultados garantizados en la primera semana. El buen marketing necesita datos, y los datos necesitan tiempo</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>No puedes responder clientes rapidamente. El seguimiento lento destruye toda la campana</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Ya te quemaste con una agencia antes y no estas dispuesto a intentarlo diferente esta vez</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>No confias en dar tu informacion de pago a extraños. Si ese es el caso, hablemos primero en la llamada</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Buscas la opcion mas barata. No somos esa opcion, y no nos disculpamos por eso</li>
+        </ul>
       </div>
 
       
@@ -914,42 +935,28 @@
   </div>
 </section>
 
-<section id="fit">
+<section id="founder">
   <div class="container">
-    <div class="fit-header" data-aos="fade-up" data-aos-duration="600">
-      <span class="section-label">Habla Claro</span>
-      <h2>Esto No Es Para Todo El Mundo</h2>
-      <div class="divider centered"></div>
-      <p>Trabajo con un numero limitado de clientes a la vez. Antes de agendar una llamada, se honesto sobre donde estas. Si no eres un buen fit, te lo digo en la llamada. Sin drama..</p>
-    </div>
-    <div class="fit-grid">
-      <div class="fit-col good" data-aos="fade-right" data-aos-duration="600">
-        <div class="fit-col-header">
-          <div class="fit-col-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <div class="fit-col-title">Esto Es Para Ti Si...</div>
+    <div class="founder-story-grid">
+      <div data-aos="fade-right" data-aos-duration="700" style="position:relative">
+        <img src="Leo.jpeg" alt="Leonardo Munoz, Fundador de Marketing Genius INC" class="founder-photo" />
+        <div class="founder-img-tag">
+          <div class="founder-img-tag-name">Leonardo Munoz</div>
+          <div class="founder-img-tag-title">Fundador, Marketing Genius INC / Colombia</div>
         </div>
-        <ul class="fit-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Tu empresa genera entre $1M y $3M al ano y quieres crecer sin agregar mas caos</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Tienes un equipo que puede manejar mas trabajo. Solo necesitas los proyectos para mantenerlos ocupados</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Estas cansado de competir por precio con contratistas que hacen la mitad de la calidad que tu</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Entiendes que el marketing es una inversion, no un gasto. Puedes comprometerte con un minimo de 90 dias</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Respondes a clientes potenciales rapidamente y tienes un proceso de ventas</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Tu proyecto minimo es de $8,000 o mas</li>
-        </ul>
       </div>
-      <div class="fit-col bad" data-aos="fade-left" data-aos-duration="600">
-        <div class="fit-col-header">
-          <div class="fit-col-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
-          <div class="fit-col-title">Esto No Es Para Ti Si...</div>
+      <div class="founder-story-content" data-aos="fade-left" data-aos-duration="700">
+        <span class="section-label">De Fundador a Fundador</span>
+        <h2>Conozco tu Negocio Porque Creci en Uno</h2>
+        <div class="divider"></div>
+        <div class="founder-story-body">
+          <p class="lead">Crecí rodeado de construcción. Vi de cerca como funcionan los negocios de contratistas latinos: financiados con familia, construidos con reputacion, y mantenidos vivos por el boca a boca.</p>
+          <p>También vi el techo. El momento en que ya no puedes crecer mas porque tu negocio depende de cuantas personas te recomienden ese mes. Eso no es un negocio sostenible. <strong>Es una apuesta.</strong></p>
+          <p>Me ensene a mi mismo publicidad pagada desde cero: probando, perdiendo dinero, aprendiendo, y reconstruyendo hasta entender que es lo que realmente mueve la aguja para empresas de servicios. No teoria. No cursos. Lo que funciona en el mundo real, con presupuestos reales, en mercados competitivos de verdad.</p>
+          <p class="callout">"Yo soy colombiano. Conozco la desconfianza que sientes cuando alguien que no entiende tu cultura, tu forma de trabajar, o la realidad de tu flujo de caja te quiere vender algo. Por eso hablo directo."</p>
+          <p>Funde Marketing Genius INC con un solo enfoque: <strong>empresas de hardscaping, pavimentacion y concreto entre $1M y $3M</strong>, operadores que ya demostraron que pueden entregar trabajo de calidad pero no han logrado crear demanda constante para ese trabajo. Ese es el espacio que yo cierro.</p>
+          <p>No trabajo con cualquier empresa. No prometo resultados de la noche a la manana. Pero si trabajas conmigo, sabes que la persona al otro lado del telefono entiende de donde vienes. Porque yo tambien vengo de ahi.</p>
         </div>
-        <ul class="fit-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Estas por debajo de $500K y aun no tienes la capacidad de equipo para tomar mas trabajos</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Quieres resultados garantizados en la primera semana. El buen marketing necesita datos, y los datos necesitan tiempo</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>No puedes responder clientes rapidamente. El seguimiento lento destruye toda la campana</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Ya te quemaste con una agencia antes y no estas dispuesto a intentarlo diferente esta vez</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>No confias en dar tu informacion de pago a extraños. Si ese es el caso, hablemos primero en la llamada</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Buscas la opcion mas barata. No somos esa opcion, y no nos disculpamos por eso</li>
-        </ul>
       </div>
 
       
@@ -1036,7 +1043,10 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="Logo.jpeg" alt="Marketing Genius INC" />
+        <a href="#hero" class="footer-logo" id="footer-logo-link" aria-label="Marketing Genius INC">
+          <img src="logo.jpeg" alt="Marketing Genius INC" />
+          <span class="footer-logo-text">Marketing Genius INC</span>
+        </a>
         <p>Publicidad pagada para empresas de hardscaping, pavimentacion y concreto entre $1M y $3M. Sin dependencia de referidos. Sin adivinanzas.</p>
         <div class="footer-socials">
           <a href="https://www.instagram.com/leostrategys/reels/" target="_blank" rel="noopener" class="footer-social-link" id="footer-instagram" aria-label="Instagram">
@@ -1056,11 +1066,11 @@
       <div class="footer-col">
         <div class="footer-col-title">Navegacion</div>
         <ul class="footer-links">
-          <li><a href="#founder-story" id="footer-nav-founder">Quien Soy</a></li>
-          <li><a href="#results" id="footer-nav-results">Resultados</a></li>
           <li><a href="#how" id="footer-nav-how">Como Funciona</a></li>
-          <li><a href="#services" id="footer-nav-services">Servicios</a></li>
           <li><a href="#fit" id="footer-nav-fit">Es Para Ti?</a></li>
+          <li><a href="#results" id="footer-nav-results">Resultados</a></li>
+          <li><a href="#services" id="footer-nav-services">Servicios</a></li>
+          <li><a href="#founder" id="footer-nav-founder">El Fundador</a></li>
           <li><a href="#faq" id="footer-nav-faq">Preguntas</a></li>
         </ul>
       </div>
@@ -1080,9 +1090,7 @@
         </div>
         <div class="footer-contact-item">
           <div class="footer-contact-label">Telefono</div>
-          <div class="footer-contact-value" id="footer-phone">[Telefono proximamente]</div>
-
-      
+          <div class="footer-contact-value" id="footer-phone"><a href="tel:+16615916768">+1 (661) 591-6768</a></div>
         </div>
 
       </div>

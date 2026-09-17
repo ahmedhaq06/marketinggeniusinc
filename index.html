@@ -207,10 +207,26 @@
         0 0 0 1px rgba(24, 163, 73, 0.12);
     }
 
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
     .nav-logo img {
-      height: 40px;
+      height: 34px;
       width: auto;
       display: block;
+      object-fit: contain;
+    }
+
+    .nav-logo-text {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      white-space: nowrap;
     }
 
     .nav-links {
@@ -1235,11 +1251,27 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .footer-brand img {
-      height: 40px;
-      width: auto;
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
       margin-bottom: 20px;
+    }
+
+    .footer-logo img {
+      height: 36px;
+      width: auto;
       display: block;
+      object-fit: contain;
+    }
+
+    .footer-logo-text {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      white-space: nowrap;
     }
 
     .footer-brand p {
@@ -1319,6 +1351,16 @@
     .footer-contact-value {
       font-size: 14px;
       color: var(--text-muted);
+    }
+
+    .footer-contact-value a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .footer-contact-value a:hover {
+      color: var(--green-light);
     }
 
     .footer-bottom {
@@ -1778,13 +1820,14 @@
   <nav id="nav" aria-label="Main navigation">
     <div class="nav-pill">
       <a href="#hero" class="nav-logo" id="nav-logo-link" aria-label="Marketing Genius INC Home">
-        <img src="Logo.jpeg" alt="Marketing Genius INC" />
+        <img src="logo.jpeg" alt="Marketing Genius INC" />
+        <span class="nav-logo-text">Marketing Genius INC</span>
       </a>
       <ul class="nav-links">
         <li><a href="#how" id="nav-how">How It Works</a></li>
-        <li><a href="#founder" id="nav-founder">The Founder</a></li>
-        <li><a href="#results" id="nav-results">Results</a></li>
         <li><a href="#fit" id="nav-fit">Is This You?</a></li>
+        <li><a href="#results" id="nav-results">Results</a></li>
+        <li><a href="#founder" id="nav-founder">The Founder</a></li>
         <li><a href="#faq" id="nav-faq">FAQ</a></li>
       </ul>
       <a href="https://cal.com/leonardo-munoz-os2dve/30min" target="_blank" rel="noopener noreferrer" class="nav-cta"
@@ -1803,9 +1846,9 @@
       </svg>
     </button>
     <a href="#how" id="mobile-nav-how">How It Works</a>
-    <a href="#founder" id="mobile-nav-founder">The Founder</a>
-    <a href="#results" id="mobile-nav-results">Results</a>
     <a href="#fit" id="mobile-nav-fit">Is This You?</a>
+    <a href="#results" id="mobile-nav-results">Results</a>
+    <a href="#founder" id="mobile-nav-founder">The Founder</a>
     <a href="#faq" id="mobile-nav-faq">FAQ</a>
     <a href="https://cal.com/leonardo-munoz-os2dve/30min" target="_blank" rel="noopener noreferrer" class="btn-primary"
       id="mobile-nav-cta">Book a Call</a>
@@ -1955,51 +1998,80 @@
     </div>
   </section>
 
-  <section id="founder">
+  <section id="fit">
     <div class="container">
-      <div class="founder-grid">
-        <div class="founder-img-wrap" data-aos="fade-right" data-aos-duration="700">
-          <img src="Leo.jpeg" alt="Leonardo Munoz, Founder of Marketing Genius INC" class="founder-photo" />
-          <div class="founder-img-tag">
-            <div class="founder-img-tag-name">Leonardo Munoz</div>
-            <div class="founder-img-tag-title">Founder, Marketing Genius INC</div>
+      <div class="fit-header" data-aos="fade-up" data-aos-duration="600">
+        <span class="section-label">Straight Talk</span>
+        <h2>This Is Not for Everyone</h2>
+        <div class="divider centered"></div>
+        <p>We work with a small number of clients at a time. Before you book a call, be honest about where you are.</p>
+      </div>
+      <div class="fit-grid">
+        <div class="fit-col good" data-aos="fade-right" data-aos-duration="600">
+          <div class="fit-col-header">
+            <div class="fit-col-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg></div>
+            <div class="fit-col-title">This Is for You If...</div>
           </div>
+          <ul class="fit-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>You are doing $1M to $3M in revenue and want to grow without adding more chaos</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>You have a crew that can handle more work and just need the jobs to fill them</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>You are tired of competing on price with contractors half your quality</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>You understand marketing is an investment, not an expense, and you can commit to a minimum 90-day
+              window</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>You respond to leads within the hour and have a sales process in place</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>Your minimum project value is $8,000 or higher</li>
+          </ul>
         </div>
-        <div class="founder-content" data-aos="fade-left" data-aos-duration="700">
-          <span class="section-label">The Founder</span>
-          <h2>Built by Someone Who Has Seen Both Sides</h2>
-          <div class="divider"></div>
-          <div class="founder-body">
-            <p class="lead">I did not come from marketing. I came from watching hardworking people build things with
-              their hands and wondering why the business side never seemed to work in their favor.</p>
-            <p>Growing up around construction, I saw how talented operators (people who could pour a perfect driveway or
-              build a retaining wall that lasts decades) were constantly fighting for jobs that should have been coming
-              to them naturally. The work was never the problem. <strong>The visibility was.</strong></p>
-            <p>I taught myself paid advertising the hard way: testing, losing money, learning, and rebuilding until I
-              understood what actually moves the needle for service businesses. Not theory. Not tactics from a course.
-              What works in the real world, with real budgets, in real competitive markets.</p>
-            <p>I started Marketing Genius INC with one focus: <strong>hardscaping, paver, and concrete companies between
-                $1M and $3M</strong>, operators who have proven they can deliver quality work but have not cracked how
-              to create consistent demand for it. That is the gap I exist to close.</p>
+        <div class="fit-col bad" data-aos="fade-left" data-aos-duration="600">
+          <div class="fit-col-header">
+            <div class="fit-col-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg></div>
+            <div class="fit-col-title">This Is Not for You If...</div>
           </div>
-          <div class="founder-credentials">
-            <div class="founder-credential">
-              <div class="founder-credential-label">Specialization</div>
-              <div class="founder-credential-value">Hardscaping, Paver and Concrete</div>
-            </div>
-            <div class="founder-credential">
-              <div class="founder-credential-label">Target Client</div>
-              <div class="founder-credential-value">$1M to $3M Revenue Operators</div>
-            </div>
-            <div class="founder-credential">
-              <div class="founder-credential-label">Channel Focus</div>
-              <div class="founder-credential-value">Meta Ads and Google Ads</div>
-            </div>
-            <div class="founder-credential">
-              <div class="founder-credential-label">Approach</div>
-              <div class="founder-credential-value">Data-Driven, No Guesswork</div>
-            </div>
-          </div>
+          <ul class="fit-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>You are under $500K and do not yet have the crew capacity to take on more jobs</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>You want a guaranteed ROI on week one, good marketing takes data, and data takes time</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>You cannot follow up with leads quickly, slow follow-up kills the entire campaign</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>You take every job regardless of size, we build campaigns for specific ticket targets, not volume
+            </li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>You have had bad experiences with agencies before but are not willing to approach this differently
+            </li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>You are looking for the cheapest option, we are not it, and we are not apologizing for that</li>
+          </ul>
         </div>
 
 
@@ -2294,80 +2366,51 @@
     </div>
   </section>
 
-  <section id="fit">
+  <section id="founder">
     <div class="container">
-      <div class="fit-header" data-aos="fade-up" data-aos-duration="600">
-        <span class="section-label">Straight Talk</span>
-        <h2>This Is Not for Everyone</h2>
-        <div class="divider centered"></div>
-        <p>We work with a small number of clients at a time. Before you book a call, be honest about where you are.</p>
-      </div>
-      <div class="fit-grid">
-        <div class="fit-col good" data-aos="fade-right" data-aos-duration="600">
-          <div class="fit-col-header">
-            <div class="fit-col-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12" />
-              </svg></div>
-            <div class="fit-col-title">This Is for You If...</div>
+      <div class="founder-grid">
+        <div class="founder-img-wrap" data-aos="fade-right" data-aos-duration="700">
+          <img src="Leo.jpeg" alt="Leonardo Munoz, Founder of Marketing Genius INC" class="founder-photo" />
+          <div class="founder-img-tag">
+            <div class="founder-img-tag-name">Leonardo Munoz</div>
+            <div class="founder-img-tag-title">Founder, Marketing Genius INC</div>
           </div>
-          <ul class="fit-list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>You are doing $1M to $3M in revenue and want to grow without adding more chaos</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>You have a crew that can handle more work and just need the jobs to fill them</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>You are tired of competing on price with contractors half your quality</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>You understand marketing is an investment, not an expense, and you can commit to a minimum 90-day
-              window</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>You respond to leads within the hour and have a sales process in place</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>Your minimum project value is $8,000 or higher</li>
-          </ul>
         </div>
-        <div class="fit-col bad" data-aos="fade-left" data-aos-duration="600">
-          <div class="fit-col-header">
-            <div class="fit-col-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg></div>
-            <div class="fit-col-title">This Is Not for You If...</div>
+        <div class="founder-content" data-aos="fade-left" data-aos-duration="700">
+          <span class="section-label">The Founder</span>
+          <h2>Built by Someone Who Has Seen Both Sides</h2>
+          <div class="divider"></div>
+          <div class="founder-body">
+            <p class="lead">I did not come from marketing. I came from watching hardworking people build things with
+              their hands and wondering why the business side never seemed to work in their favor.</p>
+            <p>Growing up around construction, I saw how talented operators (people who could pour a perfect driveway or
+              build a retaining wall that lasts decades) were constantly fighting for jobs that should have been coming
+              to them naturally. The work was never the problem. <strong>The visibility was.</strong></p>
+            <p>I taught myself paid advertising the hard way: testing, losing money, learning, and rebuilding until I
+              understood what actually moves the needle for service businesses. Not theory. Not tactics from a course.
+              What works in the real world, with real budgets, in real competitive markets.</p>
+            <p>I started Marketing Genius INC with one focus: <strong>hardscaping, paver, and concrete companies between
+                $1M and $3M</strong>, operators who have proven they can deliver quality work but have not cracked how
+              to create consistent demand for it. That is the gap I exist to close.</p>
           </div>
-          <ul class="fit-list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>You are under $500K and do not yet have the crew capacity to take on more jobs</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>You want a guaranteed ROI on week one, good marketing takes data, and data takes time</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>You cannot follow up with leads quickly, slow follow-up kills the entire campaign</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>You take every job regardless of size, we build campaigns for specific ticket targets, not volume
-            </li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>You have had bad experiences with agencies before but are not willing to approach this differently
-            </li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>You are looking for the cheapest option, we are not it, and we are not apologizing for that</li>
-          </ul>
+          <div class="founder-credentials">
+            <div class="founder-credential">
+              <div class="founder-credential-label">Specialization</div>
+              <div class="founder-credential-value">Hardscaping, Paver and Concrete</div>
+            </div>
+            <div class="founder-credential">
+              <div class="founder-credential-label">Target Client</div>
+              <div class="founder-credential-value">$1M to $3M Revenue Operators</div>
+            </div>
+            <div class="founder-credential">
+              <div class="founder-credential-label">Channel Focus</div>
+              <div class="founder-credential-value">Meta Ads and Google Ads</div>
+            </div>
+            <div class="founder-credential">
+              <div class="founder-credential-label">Approach</div>
+              <div class="founder-credential-value">Data-Driven, No Guesswork</div>
+            </div>
+          </div>
         </div>
 
 
@@ -2509,7 +2552,10 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="Logo.jpeg" alt="Marketing Genius INC" />
+          <a href="#hero" class="footer-logo" id="footer-logo-link" aria-label="Marketing Genius INC Home">
+            <img src="logo.jpeg" alt="Marketing Genius INC" />
+            <span class="footer-logo-text">Marketing Genius INC</span>
+          </a>
           <p>Paid advertising for hardscaping, paver, and concrete companies between $1M and $3M. No referral
             dependency. No guesswork.</p>
           <div class="footer-socials">
@@ -2549,10 +2595,10 @@
           <div class="footer-col-title">Navigation</div>
           <ul class="footer-links">
             <li><a href="#how" id="footer-nav-how">How It Works</a></li>
-            <li><a href="#founder" id="footer-nav-founder">The Founder</a></li>
+            <li><a href="#fit" id="footer-nav-fit">Is This You?</a></li>
             <li><a href="#results" id="footer-nav-results">Case Studies</a></li>
             <li><a href="#services" id="footer-nav-services">Services</a></li>
-            <li><a href="#fit" id="footer-nav-fit">Is This You?</a></li>
+            <li><a href="#founder" id="footer-nav-founder">The Founder</a></li>
             <li><a href="#faq" id="footer-nav-faq">FAQ</a></li>
           </ul>
         </div>
@@ -2572,9 +2618,7 @@
           </div>
           <div class="footer-contact-item">
             <div class="footer-contact-label">Phone</div>
-            <div class="footer-contact-value" id="footer-phone">[Phone coming soon]</div>
-
-
+            <div class="footer-contact-value" id="footer-phone"><a href="tel:+16615916768">+1 (661) 591-6768</a></div>
           </div>
 
         </div>
